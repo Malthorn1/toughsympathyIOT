@@ -21,7 +21,7 @@ eps = 0.05;   // small number to avoid coincident faces
 
 module squres() {
     color("red") translate([(SHD+SHDF)/2,0,3]) 
-   cube([SHD,SHD,SHHF], center = true);
+   cube([SHD,SHD,SHHF], center = true)
     color("red") translate([-(SHD+SHDF)/2,0,3]) 
     cube([SHD,SHD,SHHF], center = true);
 }
@@ -31,7 +31,7 @@ module squres() {
 
 module motor() {
 difference() {
-    color("blue") cylinder(h = 8, r = SHD/2, center = true, $fn = 32); 
+    color("blue") cylinder(h = 20, r = SHD/2, center = true, $fn = 32); 
     squres();
 
         }
