@@ -19,16 +19,17 @@ SHH = 9.75;   // height of shaft above motor body
 eps = 0.05;   // small number to avoid coincident faces
 
 
-module squres() {
+/*module squres() {
     color("green") translate([-(SHD+SHDF)/2,0,3]) 
     cube([SHD,SHD,15], center = true);
     color("red") translate([(SHD+SHDF)/2,0,3]) 
     cube([SHD,SHD,15], center = true);
 }
-
+*/ 
 
     
 
+/*
 module motor() {
 difference() {
     color("blue") cylinder(h = 20, r = SHD/2, center = true, $fn = 32); 
@@ -38,8 +39,10 @@ difference() {
 
 
 
-}   
+}
+*/ 
 
+/*
 module cylindertop() {
  difference() {
     translate([0,0,35])
@@ -49,35 +52,24 @@ module cylindertop() {
     
  }
 }
-
+*/
 
  module stack() {   
 difference(){
-   cylinder(h=80, r=6, $fn = 4); 
-   motor();
+    translate([0,0,2])
+   cylinder(h=95, r=8, $fn = 4); 
+   cylinder(h=1000, r=4.15, $fn=32); 
 }
 }
 stack();
 
+/*
 difference() {
     cylindertop();
     stack();
-    
-  
- 
-
 }	
 
-color("green") translate([7.5,0,0]) 
-cube([10,20,1], center = true);
-
-color("green") translate([-7.5,0,0]) 
-cube([10,20,1], center = true);
-		
-color("green") translate([0,8.5,0]) 
-cube([20,10,1], center = true);
-color("green") translate([0,-8.5,0]) 
-cube([20,10,1], center = true);
+*/		
 
 
 

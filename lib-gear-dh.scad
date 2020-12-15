@@ -60,16 +60,22 @@ module cylindertop() {
 
 }
 
-
+/*
+//Hullet til Bottom Gear
  module stack() {   
 difference(){
-   cylinder(h=80, r=6.6, $fn = 4); 
+   cylinder(h=80, r=8.04, $fn = 4); 
+   motor();
+}
+} */
+
+//Hullet til Top gear
+ module stack() {   
+difference(){
+   cylinder(h=80, r=6.05, $fn = 4); 
    motor();
 }
 }
-
-
-
 		
 
 
@@ -107,7 +113,7 @@ module gear(n=0,thk=0,sc=0){
 
 
 difference() {
-    gear(9,20,10);  //(antal tænder, tandhjulets højde, tandhjulets scalering) 
+    gear(9,25,10);  //(antal tænder, tandhjulets højde, tandhjulets scalering) 
     translate([0,0,-10])
     stack();
 }

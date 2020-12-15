@@ -7,9 +7,9 @@ void setup() {
 }
  
 void loop() {
-stepper.setSpeed(15); // 1 rpm
-stepper.step(2038); // do 2038 steps -- corresponds to one revolution in one minute
-delay(1000); // wait for one second
-stepper.setSpeed(15); // 6 rpm
+//stepper.setSpeed(5); // 1 rpm
+//stepper.step(2038); // do 2038 steps -- corresponds to one revolution in one minute
+//delay(1000); // wait for one second
+stepper.setSpeed(14); // 6 rpm
 stepper.step(-2038); // do 2038 steps in the other direction with faster speed -- corresponds to one revolution in 10 seconds
 }
