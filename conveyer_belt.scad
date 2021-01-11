@@ -37,16 +37,16 @@ difference(){
 
 
 translate([0, -4, 7.3]){
-    cube([5,5,25]);
+     color("yellow")cube([5,5,25]);
 }
     
    
 
     
-
+//Denne laver den grønne cylinder
 difference(){
     translate([2.4, -5.5, 7.3]){
-    cylinder(h=25, r=2.7, $fn=50);
+    color("green") cylinder(h=25, r=2.7, $fn=50);
     }
     translate([2.4,-5.5,7.3]){
         cylinder(h=100, r=1.6, $fn=50);
@@ -57,10 +57,10 @@ difference(){
 
 rotate([0,90,0]){
     translate([-24,3,5]){
-        color("magenta")cylinder(h=7, r=1, $fn=50);
+        color("purple")cylinder(h=7, r=1, $fn=50);
     }
     translate([-16,3,5]){
-        color("magenta")cylinder(h=7, r=1, $fn=50);
+        color("purple")cylinder(h=7, r=1, $fn=50);
     }
 
 }

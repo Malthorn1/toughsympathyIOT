@@ -1,43 +1,21 @@
-// 28BYJ-48 from RGriffoGoes 
-// at http://www.thingiverse.com/thing:204734
-// named and measured dimensions, and
-// added details by J.Beale 21 July 2014
-
-MBH = 18.8;   // motor body height
-MBD = 28.25;  // motor body OD
+//Top Akslen, tandhjulet sidder på. 
+//I enden ved 0, er der udhulet så vores steppermotor kan sidde og dreje akslen. 
+//I modsatte var ambitionen at vi ville have aklen til at rotere på stativet, deraf cylinderen i toppen. Men vi endte med sætte et sæm ind igennem.
 
 
-SHD = 5.9;   // motor shaft OD
-SHDF = 4.0;   // motor shaft diameter, across flats
-SHHF = 6.0;   // motor shaft flats height, or depth in from end
-SHH = 9.75;   // height of shaft above motor body 
-
-
-
-
-// =========================================================
-eps = 0.05;   // small number to avoid coincident faces
-
-
+//Grunden til de skæve tal er at det er nogle mål vi har fundet, til steppermotoren. så shaftet sad så præcist som muligt på steppermotoren. 
 module squres() {
-    color("green") translate([-(SHD+SHDF)/2,0,3]) 
-    cube([SHD,SHD,15], center = true);
-    color("red") translate([(SHD+SHDF)/2,0,3]) 
-    cube([SHD,SHD,15], center = true);
+    color("green") translate([-4.95,0,3]) 
+    cube([5.9,5.9,15], center = true);
+    color("red") translate([4.95,0,3]) 
+    cube([5.9,5.9,15], center = true);
 }
-
-
-    
 
 module motor() {
 difference() {
-    color("blue") cylinder(h = 20, r = SHD/2, center = true, $fn = 32); 
+    color("blue") cylinder(h = 20, r = 2.95, center = true, $fn = 32); 
     squres();
-
         }
-
-
-
 }   
 
 module cylindertop() {
@@ -46,10 +24,8 @@ module cylindertop() {
     cylinder(h=64.9, r=4, $fn = 30); 
     translate ([0, 0, 90])
     cylinder(h=10, r=2, $fn = 30); 
-    
  }
 }
-
 
  module stack() {   
 difference(){
@@ -58,15 +34,10 @@ difference(){
 }
 }
 stack();
+cylindertop();
 
-difference() {
-    cylindertop();
-    stack();
-    
-  
- 
 
-}	
+//Alt Herunder er kun support til print, da vi  gerne ville printe den stående lodret
 
 color("green") translate([7.5,0,0]) 
 cube([10,20,1], center = true);
